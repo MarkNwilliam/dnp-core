@@ -23,10 +23,10 @@ port. What the core guarantees:
 - Simulation: **12/12 cocotb tests pass** (icarus), and again on the
   gate-level netlist after the Tiny Tapeout flow.
 - Synthesis: generic yosys **3137 cells / 689 FFs**, no latches, `check` clean.
-- Physical: shipped as `10-Digital-Number-Plate-TinyTapeout` (IHP sg13g2,
-  **2x2** tiles). Real flow: 4,652 std cells, 63.1% utilization, setup and
-  hold WNS/TNS 0.0 at 20 ns, LVS clean, 0 route DRC, 0 antenna. 50
-  max-fanout violations remain on wide control nets.
+- Physical: shipped as [`MarkNwilliam/tt-dnp`](https://github.com/MarkNwilliam/tt-dnp)
+  (IHP sg13g2, **2x2** tiles). Real flow: 4,652 std cells, 63.1% utilization,
+  setup and hold WNS/TNS 0.0 at 20 ns, LVS clean, 0 route DRC, 0 antenna.
+  50 max-fanout violations remain on wide control nets.
 
 > **Why 2x2 and not 1x1/1x2:** the generic-cell estimate badly understates
 > this design. A 1x2 GDS run came in at 115% utilization, and trimming
