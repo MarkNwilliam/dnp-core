@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+sim/sim_build/
+sim/__pycache__/
+sim/results.xml
+sim/output/
+synth/*.json

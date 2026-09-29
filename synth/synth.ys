@@ -1,0 +1,18 @@
+# Yosys synthesis check for the Digital Number Plate core.
+# Generic-cell mapping so we get an area / cell-count figure before committing
+# to a tapeout tile.
+
+read_verilog -sv rtl/np_time.sv
+read_verilog -sv rtl/np_id.sv
+read_verilog -sv rtl/np_toll.sv
+read_verilog -sv rtl/np_edr.sv
+read_verilog -sv rtl/np_audit.sv
+read_verilog -sv rtl/np_tamper.sv
+read_verilog -sv rtl/np_digest.sv
+read_verilog -sv rtl/np_core.sv
+
+hierarchy -top np_core
+synth -top np_core -flatten
+
+stat
+check -assert
